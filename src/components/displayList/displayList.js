@@ -30,7 +30,15 @@ function DisplayList(props) {
 			.then(response => response.json())
 			.then(response => {
 				const results = response.restaurants;
-				setResultList(results.map(r => ({ id: r.id, name: r.name })));
+				setResultList(
+					results.map(r => ({
+						id: r.id,
+						name: r.name,
+						address: r.address,
+						city: r.city,
+						image_url: r.image_url
+					}))
+				);
 			})
 			.catch(error => console.error(error));
 	}, [searchQuery]);
@@ -43,14 +51,16 @@ function DisplayList(props) {
 	};
 
 	return (
-		<>
+		<div className={classes.Container}>
 			<Search clickHandler={onClickHandler} />
-			{resultList
-				? resultList.map(result => (
-						<DisplayItem key={resultList.id} {...result} />
-				  ))
-				: 'No results found!'}
-		</>
+			<div className={classes.DisplayLayout}>
+				{resultList
+					? resultList.map(result => (
+							<DisplayItem key={resultList.id} {...result} />
+					  ))
+					: 'No results found!'}
+			</div>
+		</div>
 	);
 }
 

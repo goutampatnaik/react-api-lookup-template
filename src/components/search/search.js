@@ -23,10 +23,10 @@ function Search(props) {
 	}
 
 	return (
-		<>
+		<div className={classes.Container}>
 			<label>Search Term</label>
 			<input className={classes.TextInput} ref={searchTermRef} />
-			<label>Results per page</label>
+			<label>Per page</label>
 			<select ref={resultsPerPageRef}>
 				{SearchOptions.resultsPerPage.map(item => (
 					<option value={item}>{item}</option>
@@ -41,7 +41,7 @@ function Search(props) {
 			<button className={classes.Button} onClick={onClickHandler}>
 				Search
 			</button>
-		</>
+		</div>
 	);
 }
 

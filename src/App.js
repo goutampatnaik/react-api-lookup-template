@@ -7,7 +7,7 @@ function App() {
 	return (
 		<div className="App">
 			<h2>Search API Template</h2>
-			<p>Enter name of a city to view a list of restaurants.</p>
+			<p>Enter name of a city and click Search to view a list of restaurants.</p>
 			<DisplayList />
 		</div>
 	);

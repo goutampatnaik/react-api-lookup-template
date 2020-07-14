@@ -7,7 +7,7 @@ function DisplayItem({ name, address, city, image_url }) {
 		<div className={classes.DisplayItem}>
 			<img src={image_url} alt={name} />
 			<div className={classes.Info}>
-				<label>{name}</label>
+				<label className={classes.Name}>{name}</label>
 				<label>{address}</label>
 				<label>{city}</label>
 			</div>

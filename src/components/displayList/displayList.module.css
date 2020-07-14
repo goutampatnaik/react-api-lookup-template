@@ -1,10 +1,10 @@
 .Container {
 	margin: 10px auto;
 	width: 95%;
+	box-sizing: border-box;
 }
 
 .DisplayLayout {
-	margin: 10px auto;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;

@@ -21,10 +21,12 @@ function DisplayList(props) {
 
 	// Initially set results to null
 	const [resultList, setResultList] = useState(null);
+	const [loading, setLoading] = useState(false);
 
 	useEffect(() => {
 		// No need to proceed if search term not provided
 		if (!searchQuery.searchTerm) return;
+		setLoading(true);
 
 		// Set API dynamic query based on searchQuery
 		const url = API_URL.replace(SEARCH_TERM, searchQuery.searchTerm)
@@ -35,6 +37,7 @@ function DisplayList(props) {
 		fetch(url)
 			.then(response => response.json())
 			.then(response => {
+				setLoading(false);
 				const results = response.restaurants;
 				setResultList(
 					// Prepare object from as many properties as required in the app
@@ -47,7 +50,10 @@ function DisplayList(props) {
 					}))
 				);
 			})
-			.catch(error => console.error(error));
+			.catch(error => {
+				setLoading(false);
+				console.error(error);
+			});
 	}, [searchQuery]);
 
 	const onClickHandler = searchObject => {
@@ -75,7 +81,13 @@ function DisplayList(props) {
 	return (
 		<div className={classes.Container}>
 			<Search clickHandler={onClickHandler} />
-			<div className={classes.DisplayLayout}>{result}</div>
+			<div className={classes.DisplayLayout}>
+				{loading ? (
+					<p>Please wait while we fetch your search results...</p>
+				) : (
+					result
+				)}
+			</div>
 		</div>
 	);
 }

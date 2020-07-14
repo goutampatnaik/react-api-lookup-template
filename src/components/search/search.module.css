@@ -41,11 +41,16 @@ select {
 }
 
 @media (max-width: 500px) {
-	.Button,
+	.Button {
+		width: 95%;
+		padding: 15px;
+		margin-top: 15px;
+	}
+
 	input,
 	select {
 		width: 95%;
 		padding: 15px;
-		margin-top: 15px;
+		margin-top: 5px;
 	}
 }

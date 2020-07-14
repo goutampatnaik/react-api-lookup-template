@@ -6,7 +6,8 @@
 	min-height: 95vh;
 }
 
-.App > h2 {
+.App > h2,
+p {
 	margin-left: 20px;
 }
 

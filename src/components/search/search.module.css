@@ -2,6 +2,7 @@
 	box-shadow: 0 4px 6px -2px grey;
 	padding: 20px;
 	margin-bottom: 30px;
+	border-top: 1px lightgrey solid;
 }
 
 label {

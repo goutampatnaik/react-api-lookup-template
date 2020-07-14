@@ -23,9 +23,13 @@ function Search(props) {
 	}
 
 	return (
-		<div className={classes.Container}>
+		<form className={classes.Container}>
 			<label>Search Term</label>
-			<input className={classes.TextInput} ref={searchTermRef} />
+			<input
+				className={classes.TextInput}
+				ref={searchTermRef}
+				placeholder="enter city name"
+			/>
 			<label>Per page</label>
 			<select ref={resultsPerPageRef}>
 				{SearchOptions.resultsPerPage.map(item => (
@@ -38,10 +42,10 @@ function Search(props) {
 					<option value={item}>{item}</option>
 				))}
 			</select>
-			<button className={classes.Button} onClick={onClickHandler}>
+			<button type="submit" className={classes.Button} onClick={onClickHandler}>
 				Search
 			</button>
-		</div>
+		</form>
 	);
 }
 

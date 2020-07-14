@@ -54,11 +54,12 @@ function DisplayList(props) {
 		<div className={classes.Container}>
 			<Search clickHandler={onClickHandler} />
 			<div className={classes.DisplayLayout}>
-				{resultList
-					? resultList.map(result => (
-							<DisplayItem key={resultList.id} {...result} />
-					  ))
-					: 'No results found!'}
+				{resultList &&
+					(resultList.length
+						? resultList.map(result => (
+								<DisplayItem key={resultList.id} {...result} />
+						  ))
+						: 'No results found!')}
 			</div>
 		</div>
 	);

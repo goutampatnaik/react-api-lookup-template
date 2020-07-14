@@ -37,11 +37,13 @@ function DisplayList(props) {
 		fetch(url)
 			.then(response => response.json())
 			.then(response => {
+				if (response.error) throw Error(response.error);
+
+				// Set loading to false when promise is resolved
 				setLoading(false);
-				const results = response.restaurants;
+				// Prepare object from as many properties as required in the app
 				setResultList(
-					// Prepare object from as many properties as required in the app
-					results.map(r => ({
+					response.restaurants.map(r => ({
 						id: r.id,
 						name: r.name,
 						address: r.address,
@@ -51,7 +53,11 @@ function DisplayList(props) {
 				);
 			})
 			.catch(error => {
+				// Set loading to false when promise is rejected
 				setLoading(false);
+				// Reset results when error occurs
+				setResultList([]);
+				// Log the error
 				console.error(error);
 			});
 	}, [searchQuery]);

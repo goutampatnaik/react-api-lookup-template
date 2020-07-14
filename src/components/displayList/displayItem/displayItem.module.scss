@@ -5,6 +5,7 @@
 	margin: 10px;
 	width: 30%;
 	box-sizing: border-box;
+	height: 210px;
 
 	label {
 		display: block;
@@ -30,5 +31,6 @@
 @media (max-width: 500px) {
 	.DisplayItem {
 		width: 90%;
+		height: 315px;
 	}
 }

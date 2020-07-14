@@ -5,21 +5,27 @@ import DisplayItem from './displayItem/displayItem';
 
 import classes from './displayList.module.css';
 
+// API
 const SEARCH_TERM = 'SEARCH_TERM';
 const PAGE_NUMBER = 'PAGE_NUMBER';
 const RESULTS_PER_PAGE = 'RESULTS_PER_PAGE';
 const API_URL = `https://opentable.herokuapp.com/api/restaurants?city=${SEARCH_TERM}&per_page=${RESULTS_PER_PAGE}&page=${PAGE_NUMBER}`;
 
 function DisplayList(props) {
+	// Read default values from configured options
 	const [searchQuery, setSearchQuery] = useState({
 		searchTerm: SearchOptions.searchTerm,
 		pageNumber: SearchOptions.pageNumber[0],
 		resultsPerPage: SearchOptions.resultsPerPage[0]
 	});
+
+	// Initially set results to null
 	const [resultList, setResultList] = useState(null);
 
 	useEffect(() => {
+		// No need to proceed if search term not provided
 		if (!searchQuery.searchTerm) return;
+
 		// Set API dynamic query based on searchQuery
 		const url = API_URL.replace(SEARCH_TERM, searchQuery.searchTerm)
 			.replace(PAGE_NUMBER, searchQuery.pageNumber)
@@ -31,6 +37,7 @@ function DisplayList(props) {
 			.then(response => {
 				const results = response.restaurants;
 				setResultList(
+					// Prepare object from as many properties as required in the app
 					results.map(r => ({
 						id: r.id,
 						name: r.name,
@@ -50,17 +57,25 @@ function DisplayList(props) {
 		setSearchQuery(searchObject);
 	};
 
+	// Initial value before search initiated
+	let result = null;
+
+	if (resultList) {
+		// Search returned at least one record
+		if (resultList.length) {
+			result = resultList.map(result => (
+				<DisplayItem key={result.id} {...result} />
+			));
+		} else {
+			// Search returned 0 records
+			result = 'No results found!';
+		}
+	}
+
 	return (
 		<div className={classes.Container}>
 			<Search clickHandler={onClickHandler} />
-			<div className={classes.DisplayLayout}>
-				{resultList &&
-					(resultList.length
-						? resultList.map(result => (
-								<DisplayItem key={resultList.id} {...result} />
-						  ))
-						: 'No results found!')}
-			</div>
+			<div className={classes.DisplayLayout}>{result}</div>
 		</div>
 	);
 }

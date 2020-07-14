@@ -5,7 +5,7 @@ import classes from './search.module.css';
 // Configure this as required.
 export const SearchOptions = {
 	searchTerm: '',
-	resultsPerPage: [5, 10, 15, 20],
+	resultsPerPage: [5, 10, 15],
 	pageNumber: [1, 2, 3, 4, 5]
 };
 

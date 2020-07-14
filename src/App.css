@@ -29,7 +29,7 @@ p {
 	}
 }
 
-@media (min-width: 501px) and (max-width: 1100px) {
+@media (min-width: 501px) and (max-width: 1024px) {
 	.App {
 		width: 70%;
 	}
@@ -38,7 +38,7 @@ p {
 	label,
 	input,
 	select {
-		font-size: 1.1rem;
+		font-size: 1.3rem;
 		margin-bottom: 10px;
 	}
 

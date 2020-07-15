@@ -1,19 +1,22 @@
 .Container {
 	display: flex;
 	flex-direction: column;
-	align-items: center;
 }
 
 .DisplayLayout {
-	width: 95%;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-	padding-left: 30px;
+	padding-left: 15px;
 }
 
 @media (max-width: 500px) {
+	.Container {
+		align-items: center;
+	}
+
 	.DisplayLayout {
-		padding: 0 10px;
+		width: 90%;
+		padding: 0;
 	}
 }

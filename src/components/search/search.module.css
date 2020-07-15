@@ -1,6 +1,7 @@
 .Container {
 	display: flex;
 	flex-direction: row;
+	flex-wrap: wrap;
 	box-shadow: 0 4px 6px -2px grey;
 	padding: 20px 30px;
 	margin-bottom: 30px;
@@ -8,7 +9,7 @@
 }
 
 .InputContainer {
-	margin-right: 20px;
+	margin-right: 23px;
 }
 
 .InputContainer input,
@@ -34,6 +35,7 @@ select {
 		flex-direction: column;
 		padding: 20px;
 		margin-bottom: 30px;
+		width: 75vw;
 	}
 
 	.InputContainer button {

@@ -1,9 +1,10 @@
 .App {
-	width: 65%;
-	box-shadow: 0 4px 6px -2px grey;
+	width: 50%;
+	box-shadow: 0 4px 6px 0 black;
 	margin: auto;
 	padding: 20px;
-	min-height: 95vh;
+	min-height: 94vh;
+	background-color: white;
 }
 
 .App > h2,
@@ -14,7 +15,7 @@ p {
 @media (max-width: 500px) {
 	.App {
 		width: 90%;
-		min-height: 85vh;
+		min-height: 100vh;
 		padding: 20px;
 		box-shadow: none;
 	}
@@ -39,6 +40,6 @@ p {
 
 @media (min-width: 501px) and (max-width: 1024px) {
 	.App {
-		width: 90%;
+		width: 70%;
 	}
 }

@@ -1,56 +1,52 @@
 .Container {
+	display: flex;
+	flex-direction: row;
 	box-shadow: 0 4px 6px -2px grey;
-	padding: 20px;
+	padding: 20px 30px;
 	margin-bottom: 30px;
 	border-top: 1px lightgrey solid;
 }
 
-label {
-	margin-right: 5px;
+.InputContainer {
+	margin-right: 20px;
 }
 
-input,
+.InputContainer input,
 select {
+	min-width: 100px;
+	display: block;
 	outline: none;
 	border: 1px solid #ccc;
 	background-color: white;
 	font: inherit;
 	padding: 6px 10px;
-	display: inline-block;
 	box-sizing: border-box;
-	margin-right: 20px;
+	margin-top: 5px;
 }
 
-.Button {
-	background-color: #1074e7;
-	border: solid 1px #1074e7;
-	color: white;
-	cursor: pointer;
-	font: inherit;
-	padding: 13px;
-	margin: 10px 0;
-	box-shadow: 0 4px 6px -3px grey;
-	min-width: 20%;
-	border-radius: 3px;
-	box-sizing: border-box;
-}
-
-.Button:hover,
-.Button:active {
-	background-color: #0366d6;
+.InputContainer button {
+	margin-top: 14px;
+	width: 150px;
 }
 
 @media (max-width: 500px) {
-	.Button {
-		width: 95%;
-		padding: 15px;
-		margin-top: 15px;
+	.Container {
+		flex-direction: column;
+		padding: 20px;
+		margin-bottom: 30px;
 	}
 
-	input,
+	.InputContainer button {
+		width: 100%;
+	}
+
+	.InputContainer {
+		margin-right: 0;
+	}
+
+	.InputContainer input,
 	select {
-		width: 95%;
 		padding: 15px;
-		margin-top: 5px;
+		width: 100%;
 	}
 }

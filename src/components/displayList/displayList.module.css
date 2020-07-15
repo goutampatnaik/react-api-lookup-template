@@ -1,11 +1,17 @@
 .Container {
-	margin: 10px auto;
-	width: 95%;
+	margin: auto;
 	box-sizing: border-box;
+	width: 95%;
 }
 
 .DisplayLayout {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
+}
+
+@media (max-width: 500px) {
+	.Container {
+		width: 95%;
+	}
 }

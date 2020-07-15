@@ -1,8 +1,8 @@
 .App {
-	width: 60%;
+	width: 65%;
 	box-shadow: 0 4px 6px -2px grey;
 	margin: auto;
-	padding: 30px;
+	padding: 20px;
 	min-height: 95vh;
 }
 
@@ -13,7 +13,10 @@ p {
 
 @media (max-width: 500px) {
 	.App {
-		width: 95%;
+		width: 90%;
+		min-height: 85vh;
+		padding: 20px;
+		box-shadow: none;
 	}
 
 	p,
@@ -21,7 +24,12 @@ p {
 	input,
 	select {
 		font-size: 1.1rem;
-		margin-bottom: 10px;
+		margin-bottom: 15px;
+	}
+
+	p,
+	label {
+		margin-bottom: 3px;
 	}
 
 	button {
@@ -31,18 +39,6 @@ p {
 
 @media (min-width: 501px) and (max-width: 1024px) {
 	.App {
-		width: 70%;
-	}
-
-	p,
-	label,
-	input,
-	select {
-		font-size: 1.3rem;
-		margin-bottom: 10px;
-	}
-
-	button {
-		font-size: 1.2rem !important;
+		width: 90%;
 	}
 }

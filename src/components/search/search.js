@@ -2,6 +2,8 @@ import React, { useRef, useState, useEffect } from 'react';
 
 import classes from './search.module.css';
 
+import Button from '../ui/button/button';
+
 // Configure this as required.
 export const SearchOptions = {
 	searchTerm: '',
@@ -40,31 +42,46 @@ function Search({ totalRecords, clickHandler }) {
 
 	return (
 		<form className={classes.Container}>
-			<label>Search Term</label>
-			<input
-				className={classes.TextInput}
-				ref={searchTermRef}
-				placeholder="enter city name"
-			/>
-			<label>Per page</label>
-			<select ref={resultsPerPageRef} onChange={() => setPages([])}>
-				{SearchOptions.resultsPerPage.map((item, index) => (
-					<option key={index} value={item}>
-						{item}
-					</option>
-				))}
-			</select>
-			<label>Go to Page</label>
-			<select ref={pageNumberRef} disabled={pages.length === 0}>
-				{pages.map((item, index) => (
-					<option key={index} value={item}>
-						{item}
-					</option>
-				))}
-			</select>
-			<button type="submit" className={classes.Button} onClick={onClickHandler}>
-				Search
-			</button>
+			<div className={classes.InputContainer}>
+				<label htmlFor="search-term">Search Term</label>
+				<input
+					name="search-term"
+					className={classes.TextInput}
+					ref={searchTermRef}
+					placeholder="enter city name"
+				/>
+			</div>
+			<div className={classes.InputContainer}>
+				<label htmlFor="per-page">Per page</label>
+				<select
+					name="per-page"
+					ref={resultsPerPageRef}
+					onChange={() => setPages([])}>
+					{SearchOptions.resultsPerPage.map((item, index) => (
+						<option key={index} value={item}>
+							{item}
+						</option>
+					))}
+				</select>
+			</div>
+			<div className={classes.InputContainer}>
+				<label htmlFor="go-to-page">Go to Page</label>
+				<select
+					name="go-to-page"
+					ref={pageNumberRef}
+					disabled={pages.length === 0}>
+					{pages.map((item, index) => (
+						<option key={index} value={item}>
+							{item}
+						</option>
+					))}
+				</select>
+			</div>
+			<div className={classes.InputContainer}>
+				<Button submit onClickHandler={onClickHandler}>
+					Search
+				</Button>
+			</div>
 		</form>
 	);
 }

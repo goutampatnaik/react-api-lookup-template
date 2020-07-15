@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/react-api-lookup-template/static/css/main.8fb83eb9.chunk.css",
+    "main.css": "/react-api-lookup-template/static/css/main.3b561660.chunk.css",
     "main.js": "/react-api-lookup-template/static/js/main.83440f44.chunk.js",
     "main.js.map": "/react-api-lookup-template/static/js/main.83440f44.chunk.js.map",
     "runtime-main.js": "/react-api-lookup-template/static/js/runtime-main.ec1a212c.js",
@@ -8,15 +8,15 @@
     "static/js/2.a1b57d4a.chunk.js": "/react-api-lookup-template/static/js/2.a1b57d4a.chunk.js",
     "static/js/2.a1b57d4a.chunk.js.map": "/react-api-lookup-template/static/js/2.a1b57d4a.chunk.js.map",
     "index.html": "/react-api-lookup-template/index.html",
-    "precache-manifest.d3e385dfc91cc2e5a8b3499dabf70325.js": "/react-api-lookup-template/precache-manifest.d3e385dfc91cc2e5a8b3499dabf70325.js",
+    "precache-manifest.b3bbdda47936e0902896adab1beb908f.js": "/react-api-lookup-template/precache-manifest.b3bbdda47936e0902896adab1beb908f.js",
     "service-worker.js": "/react-api-lookup-template/service-worker.js",
-    "static/css/main.8fb83eb9.chunk.css.map": "/react-api-lookup-template/static/css/main.8fb83eb9.chunk.css.map",
+    "static/css/main.3b561660.chunk.css.map": "/react-api-lookup-template/static/css/main.3b561660.chunk.css.map",
     "static/js/2.a1b57d4a.chunk.js.LICENSE.txt": "/react-api-lookup-template/static/js/2.a1b57d4a.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.ec1a212c.js",
     "static/js/2.a1b57d4a.chunk.js",
-    "static/css/main.8fb83eb9.chunk.css",
+    "static/css/main.3b561660.chunk.css",
     "static/js/main.83440f44.chunk.js"
   ]
 }
